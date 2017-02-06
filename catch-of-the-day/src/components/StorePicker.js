@@ -6,6 +6,7 @@ class StorePicker extends React.Component {
   //   super();
   //   this.goToStore = this.goToStore.bind(this);
   // }
+
   goToStore(event) {
     event.preventDefault();
     console.log('You changed the URL');
@@ -18,7 +19,7 @@ class StorePicker extends React.Component {
 
   render() {
     return (
-      <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
+      <form className="store-selector" onSubmit={this.goToStore.bind(this)}>
         <h2>Please Enter A Store</h2>
         <input type="text" required placeholder="Store Name" defaultValue={getFunName()} ref={(input) => { this.storeInput = input }} />
         <button type="submit">Visit Store -></button>
